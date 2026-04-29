@@ -1,0 +1,5 @@
+code,title,description,department_code,category,level,credits,total_seats,for_semesters,instructor,prerequisites,job_perspectives
+23CST501,Machine Learning,Introduction to machine learning algorithms and applications,CSE,professional,intermediate,3,60,"5,6",[Upload Faculty Name],Python Programming;Statistics,ML Engineer;Data Scientist
+23CST502,Cloud Computing,Cloud infrastructure and services,CSE,professional,intermediate,3,50,"5,6",[Upload Faculty Name],Networking Basics;OS Fundamentals,Cloud Architect;DevOps Engineer
+23OET501,Digital Marketing,Marketing in the digital age,CSE,open,beginner,2,40,"5,6,7",[Upload Faculty Name],Basic Marketing Concepts,Digital Marketer;SEO Specialist
+23ECT501,IoT & Embedded Systems,Internet of Things and embedded systems design,ECE,professional,intermediate,4,50,"5,6",[Upload Faculty Name],C Programming;Microcontrollers,IoT Developer;Embedded Engineer

@@ -1,0 +1,378 @@
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+
+# Database
+*.sqlite3
+*.db
+db.sqlite3
+db.sqlite3-journal
+
+# Django stuff
+*.log
+local_settings.py
+
+# Static files (collected)
+/staticfiles/
+/static_root/
+
+# Media files (uploaded)
+/media/
+/mediafiles/
+
+# Django migrations (optional - uncomment if you want to ignore migrations)
+# */migrations/*.py
+# */migrations/*.pyc
+# !*/migrations/__init__.py
+
+# Django secret key
+secret_key.txt
+
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# Eclipse
+.project
+.pydevproject
+.settings/
+
+# NetBeans
+nbproject/
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Operating System
+# ═══════════════════════════════════════════════════════════════════════════
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Project Specific
+# ═══════════════════════════════════════════════════════════════════════════
+
+# CSV data files (optional - uncomment if you don't want to commit CSV files)
+# *.csv
+# your_departments.csv
+# your_courses.csv
+# your_students.csv
+# your_admins.csv
+
+# Batch files (optional - uncomment if you don't want to commit batch files)
+# *.bat
+# fresh_start.bat
+# setup_data.bat
+
+# Log files
+logs/
+*.log
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Documentation drafts (optional)
+# *_DRAFT.md
+# *_WIP.md
+
+# Test files (optional)
+# test_*.html
+# test_*.py
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Security and Sensitive Data
+# ═══════════════════════════════════════════════════════════════════════════
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Secret keys
+secret.txt
+secrets.txt
+*.key
+*.pem
+*.crt
+*.cer
+
+# Configuration files with sensitive data
+config.ini
+config.json
+settings_local.py
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Build and Deployment
+# ═══════════════════════════════════════════════════════════════════════════
+
+# Node modules (if using npm/yarn)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Webpack
+webpack-stats.json
+
+# Sass
+.sass-cache/
+
+# Compressed files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Custom Exclusions
+# ═══════════════════════════════════════════════════════════════════════════
+
+# Exclude specific documentation files (optional)
+# ADMIN_FUNCTIONS_FIX.md
+# ADMIN_NAVIGATION_GUIDE.md
+# ALLOCATION_FIXES.md
+# BUTTON_FIXES.md
+# COMPLETE_IMPLEMENTATION_SUMMARY.md
+# DASHBOARD_UPDATE_INSTRUCTIONS.md
+# FINAL_IMPLEMENTATION_SUMMARY.md
+# NEW_FEATURES_SUMMARY.md
+# PROFILE_DROPDOWN_GUIDE.md
+# PROFILE_PAGE_REDESIGN.md
+# PROFILE_ADMIN_STUDENT_FIX.md
+# PROFILE_AVATAR_UNIFIED.md
+# FRESH_START_GUIDE.txt
+# COMMANDS_TO_RUN.txt
+# QUICK_SETUP.txt
+# SETUP_FILES_GUIDE.md
+# AVATAR_FIX_QUICK_REF.txt
+# AVATAR_UNIFIED_QUICK_REF.txt
+# PROFILE_UI_QUICK_REF.txt
+# PROFILE_DROPDOWN_QUICK_REF.txt
+# QUICK_REFERENCE_NEW_FEATURES.txt
+# ADMIN_QUICK_REFERENCE.txt
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Keep These Files (Force Include)
+# ═══════════════════════════════════════════════════════════════════════════
+
+# Keep important documentation
+!README.md
+!SETUP_INSTRUCTIONS.md
+!CSV_IMPORT_FORMAT.md
+!DATA_IMPORT_GUIDE.md
+!TESTING_GUIDE.md
+!CHANGELOG.md
+
+# Keep requirements
+!requirements.txt
+
+# Keep manage.py
+!manage.py
+
+# Keep migration __init__.py files
+!*/migrations/__init__.py
+
+# Keep static source files (not collected staticfiles)
+!static/
+
+# Keep templates
+!templates/
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Notes
+# ═══════════════════════════════════════════════════════════════════════════
+
+# This .gitignore file excludes:
+# - Database files (db.sqlite3)
+# - Python cache files (__pycache__)
+# - Virtual environments (venv, env)
+# - IDE configuration files (.vscode, .idea)
+# - OS-specific files (.DS_Store, Thumbs.db)
+# - Collected static files (staticfiles/)
+# - Media uploads (media/)
+# - Log files (*.log)
+# - Sensitive data (.env, *.key)
+#
+# To commit CSV files, comment out the CSV section above
+# To commit batch files, comment out the batch file section above
+# To ignore migrations, uncomment the migrations section above
+#
+# ═══════════════════════════════════════════════════════════════════════════
