@@ -1,0 +1,136 @@
+═══════════════════════════════════════════════════════════════════════════
+HELP ME FIX YOUR ERROR
+═══════════════════════════════════════════════════════════════════════════
+
+To help you quickly, please share:
+
+1. WHERE IS IT FAILING?
+   ☐ Local testing (on your computer)
+   ☐ Git push
+   ☐ Render build (during deployment)
+   ☐ Render start (after build completes)
+   ☐ Runtime (after deployment, when accessing the site)
+
+2. WHAT IS THE ERROR MESSAGE?
+   Copy and paste the FULL error message here:
+   
+   [Paste error here]
+
+
+3. WHAT STEP ARE YOU ON?
+   ☐ Step 1: Pushing to GitHub
+   ☐ Step 2: Creating Render account
+   ☐ Step 3: Creating PostgreSQL database
+   ☐ Step 4: Creating web service
+   ☐ Step 5: Adding environment variables
+   ☐ After deployment: Accessing the site
+
+
+═══════════════════════════════════════════════════════════════════════════
+COMMON ERRORS AND QUICK FIXES
+═══════════════════════════════════════════════════════════════════════════
+
+ERROR 1: "Permission denied: ./build.sh"
+───────────────────────────────────────────────────────────────────────────
+FIX:
+git update-index --chmod=+x build.sh
+git add build.sh
+git commit -m "Fix permissions"
+git push
+
+
+ERROR 2: "ModuleNotFoundError: No module named 'dj_database_url'"
+───────────────────────────────────────────────────────────────────────────
+FIX:
+1. Go to Render dashboard
+2. Click "Manual Deploy"
+3. Select "Clear build cache & deploy"
+
+
+ERROR 3: "Missing staticfiles manifest entry"
+───────────────────────────────────────────────────────────────────────────
+FIX:
+In settings.py, change:
+STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
+
+
+ERROR 4: "DisallowedHost at /"
+───────────────────────────────────────────────────────────────────────────
+FIX:
+In settings.py, temporarily set:
+ALLOWED_HOSTS = ['*']
+
+
+ERROR 5: "Failed to find application object"
+───────────────────────────────────────────────────────────────────────────
+FIX:
+Verify start command is:
+gunicorn sjbit_elective.wsgi:application
+
+
+ERROR 6: "Database connection error"
+───────────────────────────────────────────────────────────────────────────
+FIX:
+1. Use INTERNAL Database URL (not External)
+2. Verify DATABASE_URL is set in environment variables
+
+
+═══════════════════════════════════════════════════════════════════════════
+QUICK DIAGNOSTIC
+═══════════════════════════════════════════════════════════════════════════
+
+If testing locally, run:
+───────────────────────────────────────────────────────────────────────────
+python manage.py check
+python manage.py collectstatic --dry-run --no-input
+gunicorn sjbit_elective.wsgi:application
+
+
+If on Render, check:
+───────────────────────────────────────────────────────────────────────────
+1. Go to web service dashboard
+2. Click "Logs" tab
+3. Look for red error messages
+4. Copy the error and share it
+
+
+═══════════════════════════════════════════════════════════════════════════
+SIMPLIFIED FIX (IF NOTHING WORKS)
+═══════════════════════════════════════════════════════════════════════════
+
+1. Copy content from: settings_render_simple.py
+2. Paste into: sjbit_elective/settings.py
+3. Commit and push:
+   git add sjbit_elective/settings.py
+   git commit -m "Simplify settings for Render"
+   git push origin main
+4. Redeploy on Render
+
+
+═══════════════════════════════════════════════════════════════════════════
+SHARE YOUR ERROR
+═══════════════════════════════════════════════════════════════════════════
+
+Copy the error message from:
+
+FROM RENDER LOGS:
+1. Go to: https://dashboard.render.com/
+2. Click your web service
+3. Click "Logs" tab
+4. Copy the error (red text)
+
+FROM BUILD LOGS:
+1. Click "Events" tab
+2. Click latest deploy
+3. Click "View build logs"
+4. Copy the error
+
+FROM BROWSER:
+1. Press F12
+2. Click "Console" tab
+3. Copy any red errors
+
+
+═══════════════════════════════════════════════════════════════════════════
+PASTE YOUR ERROR HERE AND I'LL FIX IT IMMEDIATELY!
+═══════════════════════════════════════════════════════════════════════════

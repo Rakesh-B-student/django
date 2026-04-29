@@ -23,3 +23,6 @@ dj-database-url==2.1.0
 
 # Build dependencies (fix for Python 3.14)
 setuptools>=65.5.0
+
+setuptools
+wheel
