@@ -1,0 +1,127 @@
+═══════════════════════════════════════════════════════════════════════════
+RENDER DEPLOYMENT CHECKLIST
+═══════════════════════════════════════════════════════════════════════════
+
+PRE-DEPLOYMENT
+═══════════════════════════════════════════════════════════════════════════
+
+☐ GitHub account created
+☐ Render account created (https://render.com/)
+☐ Code is working locally
+☐ All files committed to Git
+☐ Repository pushed to GitHub
+
+
+FILES VERIFICATION
+═══════════════════════════════════════════════════════════════════════════
+
+☐ build.sh exists and is executable
+☐ requirements.txt updated with production dependencies
+☐ settings.py configured for production
+☐ .gitignore excludes db.sqlite3 and sensitive files
+☐ render.yaml created (optional)
+
+
+RENDER SETUP
+═══════════════════════════════════════════════════════════════════════════
+
+☐ PostgreSQL database created
+   Name: sjbit-elective-db
+   Database: sjbit_elective_db
+   User: sjbit_user
+   Plan: Free
+
+☐ Internal Database URL saved
+
+☐ Web service created
+   Name: sjbit-elective-system
+   Runtime: Python 3
+   Build Command: ./build.sh
+   Start Command: gunicorn sjbit_elective.wsgi:application
+   Plan: Free
+
+
+ENVIRONMENT VARIABLES
+═══════════════════════════════════════════════════════════════════════════
+
+☐ PYTHON_VERSION = 3.11.0
+☐ DEBUG = False
+☐ SECRET_KEY = [50-character random string]
+☐ DATABASE_URL = [Internal Database URL]
+☐ ALLOWED_HOSTS = your-app-name.onrender.com
+
+
+DEPLOYMENT
+═══════════════════════════════════════════════════════════════════════════
+
+☐ Build started successfully
+☐ Dependencies installed
+☐ Static files collected
+☐ Migrations applied
+☐ Build completed without errors
+☐ Service status shows "Live" (green)
+
+
+POST-DEPLOYMENT
+═══════════════════════════════════════════════════════════════════════════
+
+☐ Superuser created via Shell
+☐ Admin panel accessible
+☐ Homepage loads correctly
+☐ Static files (CSS, JS) loading
+☐ Login page works
+☐ Database connected
+
+
+TESTING
+═══════════════════════════════════════════════════════════════════════════
+
+☐ Admin login works
+☐ Student login works (if data imported)
+☐ Course catalog displays
+☐ Navigation works
+☐ Forms submit correctly
+☐ No console errors
+
+
+OPTIONAL
+═══════════════════════════════════════════════════════════════════════════
+
+☐ CSV data imported
+☐ Custom domain configured
+☐ Email notifications set up
+☐ Monitoring configured
+☐ Backup strategy in place
+
+
+SECURITY
+═══════════════════════════════════════════════════════════════════════════
+
+☐ DEBUG = False in production
+☐ SECRET_KEY is unique and not in Git
+☐ ALLOWED_HOSTS configured correctly
+☐ HTTPS enabled (automatic on Render)
+☐ Strong admin password set
+☐ Database password is secure
+
+
+DOCUMENTATION
+═══════════════════════════════════════════════════════════════════════════
+
+☐ Deployment URL documented
+☐ Admin credentials saved securely
+☐ Database credentials saved
+☐ Environment variables documented
+☐ Team members notified
+
+
+═══════════════════════════════════════════════════════════════════════════
+DEPLOYMENT COMPLETE! ✓
+═══════════════════════════════════════════════════════════════════════════
+
+Application URL: https://your-app-name.onrender.com/
+Admin Panel: https://your-app-name.onrender.com/admin/
+Database: PostgreSQL on Render
+Status: Live
+
+═══════════════════════════════════════════════════════════════════════════

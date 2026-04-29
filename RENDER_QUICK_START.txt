@@ -1,0 +1,186 @@
+═══════════════════════════════════════════════════════════════════════════
+RENDER DEPLOYMENT - QUICK START GUIDE
+═══════════════════════════════════════════════════════════════════════════
+
+DEPLOY YOUR DJANGO APP TO RENDER IN 5 STEPS
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 1: PUSH TO GITHUB
+═══════════════════════════════════════════════════════════════════════════
+
+git init
+git add .
+git commit -m "Initial commit for Render deployment"
+git remote add origin https://github.com/yourusername/sjbit-elective-system.git
+git push -u origin main
+
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 2: CREATE RENDER ACCOUNT
+═══════════════════════════════════════════════════════════════════════════
+
+1. Go to: https://render.com/
+2. Click "Get Started"
+3. Sign up with GitHub
+4. Authorize Render
+
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 3: CREATE POSTGRESQL DATABASE
+═══════════════════════════════════════════════════════════════════════════
+
+1. Click "New +" → "PostgreSQL"
+2. Configure:
+   Name: sjbit-elective-db
+   Database: sjbit_elective_db
+   User: sjbit_user
+   Region: Singapore (or closest)
+   Plan: Free
+3. Click "Create Database"
+4. SAVE THE INTERNAL DATABASE URL (you'll need it!)
+
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 4: CREATE WEB SERVICE
+═══════════════════════════════════════════════════════════════════════════
+
+1. Click "New +" → "Web Service"
+2. Connect your GitHub repository
+3. Configure:
+   Name: sjbit-elective-system
+   Region: Singapore (same as database)
+   Branch: main
+   Runtime: Python 3
+   Build Command: ./build.sh
+   Start Command: gunicorn sjbit_elective.wsgi:application
+   Plan: Free
+
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 5: ADD ENVIRONMENT VARIABLES
+═══════════════════════════════════════════════════════════════════════════
+
+Click "Advanced" and add these:
+
+PYTHON_VERSION = 3.11.0
+DEBUG = False
+SECRET_KEY = [Generate random 50-char string from https://djecrety.ir/]
+DATABASE_URL = [Paste Internal Database URL from Step 3]
+ALLOWED_HOSTS = your-app-name.onrender.com
+
+Then click "Create Web Service"
+
+
+═══════════════════════════════════════════════════════════════════════════
+WAIT FOR DEPLOYMENT (5-10 MINUTES)
+═══════════════════════════════════════════════════════════════════════════
+
+Watch the build logs. When status shows "Live" (green), you're done!
+
+
+═══════════════════════════════════════════════════════════════════════════
+POST-DEPLOYMENT: CREATE SUPERUSER
+═══════════════════════════════════════════════════════════════════════════
+
+1. Go to your web service dashboard
+2. Click "Shell" tab
+3. Run:
+   python manage.py createsuperuser
+
+4. Enter:
+   Username: admin
+   Email: (press Enter)
+   Password: your-secure-password
+
+
+═══════════════════════════════════════════════════════════════════════════
+ACCESS YOUR APPLICATION
+═══════════════════════════════════════════════════════════════════════════
+
+Homepage: https://your-app-name.onrender.com/
+Admin: https://your-app-name.onrender.com/admin/
+Login: https://your-app-name.onrender.com/login/
+
+
+═══════════════════════════════════════════════════════════════════════════
+FILES CREATED FOR DEPLOYMENT
+═══════════════════════════════════════════════════════════════════════════
+
+✓ build.sh - Build script
+✓ requirements.txt - Updated with production dependencies
+✓ settings.py - Updated for production
+✓ render.yaml - Deployment configuration (optional)
+
+
+═══════════════════════════════════════════════════════════════════════════
+UPDATING YOUR APP
+═══════════════════════════════════════════════════════════════════════════
+
+Make changes, then:
+
+git add .
+git commit -m "Update feature"
+git push origin main
+
+Render automatically redeploys!
+
+
+═══════════════════════════════════════════════════════════════════════════
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════
+
+Problem: Build failed
+Solution: Check build logs, verify build.sh is executable
+
+Problem: Static files not loading
+Solution: Run: python manage.py collectstatic --noinput
+
+Problem: Database connection error
+Solution: Verify DATABASE_URL is the Internal URL
+
+Problem: 502 Bad Gateway
+Solution: Check logs tab for errors
+
+
+═══════════════════════════════════════════════════════════════════════════
+RENDER FREE TIER
+═══════════════════════════════════════════════════════════════════════════
+
+Web Service:
+✓ 750 hours/month
+✓ Automatic HTTPS
+⚠ Spins down after 15 min inactivity
+⚠ Cold start: 30-60 seconds
+
+PostgreSQL:
+✓ 1 GB storage
+✓ 7-day backups
+⚠ Expires after 90 days
+
+
+═══════════════════════════════════════════════════════════════════════════
+IMPORTANT NOTES
+═══════════════════════════════════════════════════════════════════════════
+
+1. First request after inactivity takes 30-60 seconds (cold start)
+2. Free database expires after 90 days (upgrade to keep)
+3. Use Internal Database URL (not External)
+4. Never commit SECRET_KEY to Git
+5. Keep DEBUG = False in production
+
+
+═══════════════════════════════════════════════════════════════════════════
+NEED MORE HELP?
+═══════════════════════════════════════════════════════════════════════════
+
+See: RENDER_DEPLOYMENT_GUIDE.md for detailed instructions
+
+
+═══════════════════════════════════════════════════════════════════════════
+SUCCESS! 🎉
+═══════════════════════════════════════════════════════════════════════════
+
+Your app is now live on Render!
+Share your URL: https://your-app-name.onrender.com/
+
+═══════════════════════════════════════════════════════════════════════════
